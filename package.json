@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tilo1306/ignite-challenge-02-node#readme",
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "typescript": "^5.0.3"
   },
   "dependencies": {
