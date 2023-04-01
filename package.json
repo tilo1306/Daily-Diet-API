@@ -19,6 +19,7 @@
   "homepage": "https://github.com/tilo1306/ignite-challenge-02-node#readme",
   "devDependencies": {
     "@types/node": "^18.15.11",
+    "eslint": "^7.32.0",
     "tsx": "^3.12.6",
     "typescript": "^5.0.3"
   },
