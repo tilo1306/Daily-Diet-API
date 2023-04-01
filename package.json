@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tilo1306/ignite-challenge-02-node/issues"
   },
-  "homepage": "https://github.com/tilo1306/ignite-challenge-02-node#readme"
+  "homepage": "https://github.com/tilo1306/ignite-challenge-02-node#readme",
+  "devDependencies": {
+    "typescript": "^5.0.3"
+  }
 }
