@@ -5,8 +5,9 @@ import { IUsersRepository } from '../../../repositories/IUsersRepository'
 import { User } from '../entities/User'
 
 export class UsersRepository implements IUsersRepository {
-  async create({ email, password }: ICreateUserDTO): Promise<void> {
+  async create({ email, password, id }: ICreateUserDTO): Promise<void> {
     await knex('users').insert({
+      id,
       email,
       password
     })
