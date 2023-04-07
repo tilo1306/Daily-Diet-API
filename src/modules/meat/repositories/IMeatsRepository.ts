@@ -1,3 +1,4 @@
+import { ICreateMeatDTO } from '../dtos/ICreateMeatDTO'
 import { Meat } from '../infra/knex/entities/Meat'
 
 export interface IMeatsRepository {
