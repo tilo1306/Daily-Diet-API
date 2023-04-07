@@ -1,5 +1,5 @@
 export interface ICreateMeatDTO {
-  id: string
+  id?: string
   name: string
   description: string
   date_and_hour: Date
