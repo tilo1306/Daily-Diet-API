@@ -26,4 +26,9 @@ export class MeatsRepository implements IMeatsRepository {
 
     return meat as unknown as Meat
   }
+  async listAllMeats(userId: string): Promise<Meat[]> {
+    const listMeats = await knex('meats').where('userId', userId).select()
+
+    return listMeats
+  }
 }
