@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-useless-catch */
-import { strict } from 'assert'
 import { FastifyRequest, FastifyReply } from 'fastify'
 import { z } from 'zod'
 
@@ -8,7 +8,7 @@ import { makeCreateMeatUseCase } from '../factories/makeCreateMeatUseCase'
 export class CreateMeatController {
   async handler(request: FastifyRequest, reply: FastifyReply) {
     const createMeatBodySchema = z.object({
-      date_and_hour: z.date(),
+      date_and_hour: z.string(),
       description: z.string(),
       isFitness: z.boolean(),
       name: z.string()
