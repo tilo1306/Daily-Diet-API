@@ -1,5 +1,6 @@
 import { checkUserIdExists } from '@/middlewares/check-user-id-exists'
 import { CreateMeatController } from '@/modules/meat/useCase/createMeat/CreateMeatController'
+import { DeleteMeatController } from '@/modules/meat/useCase/deleteMeat/DeleteMeatController'
 import { FindMeatController } from '@/modules/meat/useCase/findMeat/FindMeatController'
 import { ListMeatsController } from '@/modules/meat/useCase/listMeats/ListMeatsController'
 import { UpdateMeatController } from '@/modules/meat/useCase/updateMeat/UpdateMeatController'
@@ -9,6 +10,7 @@ const createMeatController = new CreateMeatController()
 const listMeatsController = new ListMeatsController()
 const findMeatController = new FindMeatController()
 const updateMeatController = new UpdateMeatController()
+const deleteMeatController = new DeleteMeatController()
 
 export async function meatsRoutes(app: FastifyInstance) {
   app.post('/', { preHandler: checkUserIdExists }, createMeatController.handler)
@@ -18,5 +20,10 @@ export async function meatsRoutes(app: FastifyInstance) {
     '/:id',
     { preHandler: checkUserIdExists },
     updateMeatController.handler
+  )
+  app.delete(
+    '/:id',
+    { preHandler: checkUserIdExists },
+    deleteMeatController.handler
   )
 }
