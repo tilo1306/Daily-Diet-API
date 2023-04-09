@@ -31,4 +31,10 @@ export class MeatsRepository implements IMeatsRepository {
 
     return listMeats
   }
+
+  async findMeat(id: string, userId: string): Promise<Meat> {
+    const meat = await knex('meats').where({ userId, id }).first()
+
+    return meat as Meat
+  }
 }
