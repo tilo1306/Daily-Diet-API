@@ -6,4 +6,5 @@ export interface IMeatsRepository {
   listAllMeats(userId: string): Promise<Meat[]>
   findMeat(id: string, userId: string): Promise<Meat>
   updateMeat(date: ICreateMeatDTO): Promise<void>
+  deleteMeat(id: string, userId: string): Promise<void>
 }
