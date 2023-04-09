@@ -50,4 +50,8 @@ export class MeatsRepository implements IMeatsRepository {
       .where({ userId, id })
       .update({ date_and_hour, description, isFitness, name })
   }
+
+  async deleteMeat(id: string, userId: string): Promise<void> {
+    await knex('meats').where({ userId, id }).delete()
+  }
 }
