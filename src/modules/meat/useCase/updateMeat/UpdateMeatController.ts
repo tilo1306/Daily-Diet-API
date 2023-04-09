@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
@@ -17,18 +18,20 @@ export class UpdateMeatController {
 
     const { userId } = request.cookies as string | any
     const { id } = request.params as string | any
+    try {
+      const updateMeatUseCase = makeUpdateMeatUseCase()
 
-    const updateMeatUseCase = makeUpdateMeatUseCase()
-
-    const updateMeat = await updateMeatUseCase.execute({
-      date_and_hour,
-      description,
-      isFitness,
-      name,
-      userId,
-      id
-    })
-
-    reply.send(updateMeat)
+      const updateMeat = await updateMeatUseCase.execute({
+        date_and_hour,
+        description,
+        isFitness,
+        name,
+        userId,
+        id
+      })
+      reply.send(updateMeat)
+    } catch (error) {
+      throw error
+    }
   }
 }
