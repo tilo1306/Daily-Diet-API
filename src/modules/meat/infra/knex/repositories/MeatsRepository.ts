@@ -37,4 +37,17 @@ export class MeatsRepository implements IMeatsRepository {
 
     return meat as Meat
   }
+
+  async updateMeat({
+    date_and_hour,
+    description,
+    id,
+    isFitness,
+    name,
+    userId
+  }: ICreateMeatDTO): Promise<void> {
+    await knex('meats')
+      .where({ userId, id })
+      .update({ date_and_hour, description, isFitness, name })
+  }
 }
