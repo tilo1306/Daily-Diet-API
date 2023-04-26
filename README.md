@@ -1,5 +1,7 @@
 # ignite-challenge-02-node
 
+Nesse desafio desenvolveremos uma API para controle de dieta diária, a Daily Diet API.
+
 ### Regras da aplicação
 
 - Deve ser possível criar um usuário
